@@ -1,0 +1,24 @@
+Input:
+   KB = {set of propositional sentences}
+   α  = query sentence
+
+Output:
+   True  → if KB entails α
+   False → otherwise
+
+Steps:
+
+1. Collect all propositional symbols that appear in KB or α.
+
+2. Generate all possible combinations of truth values (True/False)
+   for these symbols (i.e., all possible models).
+
+3. For each model:
+      a. Evaluate whether KB is True in this model.
+      b. Evaluate whether α is True in this model.
+     
+      If KB is True and α is False in any model:
+           → Return False  (KB does NOT entail α)
+
+4. If no such model is found:
+      → Return True  (KB ENTAILS α)
